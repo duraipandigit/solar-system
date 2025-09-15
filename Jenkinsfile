@@ -17,7 +17,7 @@ pipeline {
     }
     }
 
-    stage('Install Dependencies') {
+    stage('Installing Dependencies') {
     
     steps{
     
