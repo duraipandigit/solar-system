@@ -6,6 +6,11 @@ pipeline {
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/duraipandigit/solar-system.git', branch: 'main', credentialsId: 'GitHub_Token'
+            }
+        } 
         stage('Check Node Version') {
             steps {
                 sh 'node -v'
