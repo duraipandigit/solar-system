@@ -1,36 +1,28 @@
 pipeline {
-
     agent any
 
     tools {
-        nodejs 'NodeJSNodeJS247'
+        nodejs 'NodeJS18'   // Name from Jenkins global tool config
     }
 
-    stages{
-        
-        stage('Check Node Version'){
+    stages {
+        stage('Check Node Version') {
+            steps {
+                sh 'node -v'
+                sh 'npm -v'
+            }
+        }
 
-        steps{
-            sh 'node -v'
-            sh 'npm -v'
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'npm run build'
+            }
         }
     }
-    }
-
-    stage('Installing Dependencies') {
-    
-    steps{
-    
-    sh 'npm install'
-    }
-    }
-    
-    stage('Build'){
-
-        steps{
-            sh 'npm run build'
-        }
-    }
-} 
-
-
+}
