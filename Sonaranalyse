@@ -2,6 +2,10 @@ pipeline {
 
     agent any
 
+tool {
+   name 'mvn3911'
+}
+
 stages {
     
     stage ('Checkout'){
