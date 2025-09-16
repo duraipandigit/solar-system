@@ -2,11 +2,6 @@ pipeline {
 
     agent any
 
-tool{
-
-maven 'mvn3911'
-}
-
 stages {
     
     stage ('Checkout'){
