@@ -39,6 +39,8 @@ stage('SonarQube Analysis'){
 
 steps{
 
+withSonarQubeEnv('sonarqube-server'){
+
 sh ''' sonarqube_test
   -Dsonar.projectKey=Sonar-Qube-Project 
   -Dsonar.sources=. 
