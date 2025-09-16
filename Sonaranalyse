@@ -35,7 +35,7 @@ stage('SonarQube Analysis'){
 
 steps{
 
-''' sonar-scanner 
+sh ''' sonar-scanner 
   -Dsonar.projectKey=Sonar-Qube-Project 
   -Dsonar.sources=. 
   -Dsonar.host.url=http://10.192.190.152:31506 
