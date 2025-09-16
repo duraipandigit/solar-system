@@ -2,6 +2,11 @@ pipeline {
 
     agent any
 
+tool{
+
+maven 'mvn3911'
+}
+
 stages {
     
     stage ('Checkout'){
@@ -35,9 +40,8 @@ stage('SonarQube Analysis'){
 
 steps{
 
-sonar-scanner \
+mvn sonar:sonar \
   -Dsonar.projectKey=Sonar-Qube-Project \
-  -Dsonar.sources=. \
   -Dsonar.host.url=http://10.192.190.152:31506 \
   -Dsonar.login=154803942af569bd7dd4b0fefc330b7325ef6bd6
 
