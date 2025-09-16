@@ -41,7 +41,7 @@ stage('SonarQube Analysis'){
 steps{
 
 mvn sonar:sonar \
-  -Dsonar.projectKey=Sonar-Qube-Project \
+  -Dsonar.projectKey='Sonar-Qube-Project' \
   -Dsonar.host.url='http://10.192.190.152:31506' \
   -Dsonar.login=154803942af569bd7dd4b0fefc330b7325ef6bd6
 
