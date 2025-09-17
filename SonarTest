@@ -7,7 +7,7 @@ pipeline {
     }
     
     environment {
-        SCANNER_HOME=tool 'sonar-scanner'
+        SCANNER_HOME=tool 'sonarqube_test'
     }
     
     stages{
@@ -52,22 +52,5 @@ pipeline {
         }
     }
 
-post {
-      success {
-         PostEmail("success")
-      }
-      aborted {
-         PostEmail("aborted")
-      }
-      unstable {
-         PostEmail("unstable")
-      }
-      failure {
-         PostEmail("failure")
-      }
-      always {
-         cleanWs()
-      }
-   }
 }
 
