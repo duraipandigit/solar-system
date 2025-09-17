@@ -58,12 +58,12 @@ pipeline {
     post {
         success {
             echo 'Pipeline completed successfully!'
-            // Notifications, emails, etc. can go here
+            
         }
         failure {
             echo 'Pipeline failed!'
-            // Notifications, emails, alerts etc.
+            
         }
     }
 }
-}
+
