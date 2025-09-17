@@ -3,8 +3,7 @@ pipeline {
     
     tools{
         jdk 'jdk11'
-        maven 'mvn3911'
-    }
+            }
     
     environment {
         SCANNER_HOME=tool 'sonarqube_test'
