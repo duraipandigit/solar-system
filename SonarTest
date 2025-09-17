@@ -56,12 +56,20 @@ pipeline {
         }
 
 post {
-  success {
-     echo 'Pipeline completed successfully!'
-         }
-        failure {
-            echo 'Pipeline failed!'      
-        }
-    }
-}
+      success {
+         PostEmail("success")
+      }
+      aborted {
+         PostEmail("aborted")
+      }
+      unstable {
+         PostEmail("unstable")
+      }
+      failure {
+         PostEmail("failure")
+      }
+      always {
+         cleanWs()
+      }
+   }
 }
