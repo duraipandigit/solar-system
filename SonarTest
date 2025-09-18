@@ -8,7 +8,7 @@ pipeline {
     
     environment {
         SCANNER_HOME=tool 'sonarqube_test'
-        MAVEN_HOME = tool 'Maven 3.8.6' 
+        MAVEN_HOME = tool 'mvn3911' 
         PATH = "${MAVEN_HOME}/bin:${env.PATH}"
     }
     
