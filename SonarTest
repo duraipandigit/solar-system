@@ -36,6 +36,12 @@ pipeline {
            
         }
 
+       stage ('Code Coverage'){
+         steps{
+            jacoco()
+        }
+    }
+
         stage('Code Analysis') {
             steps {
                 echo 'Running SonarQube analysis'
@@ -51,6 +57,8 @@ pipeline {
                 
             }
         }
+
+
     }
 
 }
