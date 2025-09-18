@@ -14,7 +14,7 @@ pipeline {
     
     stages{
     
-        stage("Git Checkout"){
+        stage('Git Checkout'){
             steps{
                 git branch: 'main', url: 'https://github.com/duraipandigit/solar-system.git'
             }
@@ -22,8 +22,9 @@ pipeline {
         
         stage('Build') {
             steps {
-               sh''' echo 'Building the application'
-                 'mvn clean install -DskipTests '''
+               sh ''' echo 'Building the application'
+                 'mvn clean install -DskipTests 
+                '''
                }
         }
 
