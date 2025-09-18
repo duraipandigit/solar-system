@@ -3,10 +3,13 @@ pipeline {
     
     tools{
         jdk 'jdk11'
+        maven 'mvn3911'
             }
     
     environment {
         SCANNER_HOME=tool 'sonarqube_test'
+        MAVEN_HOME = tool 'Maven 3.8.6' 
+        PATH = "${MAVEN_HOME}/bin:${env.PATH}"
     }
     
     stages{
@@ -20,6 +23,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application'
+                sh 'mvn clean install -DskipTests
                }
         }
 
@@ -28,7 +32,11 @@ pipeline {
                 echo 'Running unit tests'
                 sh 'mvn test'
             }
-            
+             post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
         }
 
         stage('Code Analysis') {
