@@ -22,8 +22,8 @@ pipeline {
         
         stage('Build') {
             steps {
-                echo 'Building the application'
-                sh 'mvn clean install -DskipTests
+               ''' echo 'Building the application'
+                sh 'mvn clean install -DskipTests '''
                }
         }
 
